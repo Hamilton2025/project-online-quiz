@@ -43,6 +43,15 @@ h3 {
     font-weight: 500;
 }
 
+body {
+    background-image: url(img/quiz.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    transition: background-image 0.5s ease;
+}
+
 /*Utilities*/
 .container {
     width: 100vw;
