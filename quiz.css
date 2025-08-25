@@ -256,7 +256,7 @@
   }
 
   #question {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     line-height: 1.4;
     margin-bottom: 1rem;
   }
@@ -283,7 +283,7 @@
 
   #question {
     font-size: 1.5rem;
-  }README.md
+  }
 
   .choice-container {
     flex-direction: column;
