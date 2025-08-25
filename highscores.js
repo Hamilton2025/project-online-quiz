@@ -2,47 +2,49 @@
 
 const LIST_ID = "highScoreList";
 const CLEAR_BTN_ID = "clearScoresBtn";
-const KEY = "highScores";
+const KEY = "highScores";      // use this consistently
+const LEGACY_KEY = "highScore"; // migrate from this if it exists
 
-// Ask the user for their name (once per session)
-const currentUser = prompt("Enter your name") || "Player";
+// Migrate legacy key once (in case old data used "highScore")
+try {
+  const legacy = JSON.parse(localStorage.getItem(LEGACY_KEY));
+  if (Array.isArray(legacy) && legacy.length) {
+    const current = JSON.parse(localStorage.getItem(KEY)) || [];
+    localStorage.setItem(KEY, JSON.stringify([...current, ...legacy]));
+    localStorage.removeItem(LEGACY_KEY);
+  }
+} catch { /* ignore */ }
 
-// Render the high score list
+// Render list
 function render() {
   const list = document.getElementById(LIST_ID);
   if (!list) return;
 
-  const scores = JSON.parse(localStorage.getItem(KEY)) || [];
+  let scores = [];
+  try {
+    scores = JSON.parse(localStorage.getItem(KEY)) || [];
+  } catch {
+    scores = [];
+  }
 
   if (!scores.length) {
     list.innerHTML = `<li class="high-score empty">No scores yet.</li>`;
     return;
   }
 
-  // Sort descending by score
-  scores.sort((a, b) => (b?.score || 0) - (a?.score || 0));
-
   list.innerHTML = scores
-    .map(s => {
-      // Highlight the current user's score
-      const highlight = s.name === currentUser ? "current-user" : "";
-      return `<li class="high-score ${highlight}">${s.name} - ${s.score}</li>`;
-    })
+    .sort((a, b) => (b?.score || 0) - (a?.score || 0))
+    .map(s => `<li class="high-score">${(s?.name ?? "Player")} - ${s?.score ?? 0}</li>`)
     .join("");
 }
 
-// Clear only the current user's scores
+// Clear button
 document.getElementById(CLEAR_BTN_ID)?.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  const scores = JSON.parse(localStorage.getItem(KEY)) || [];
-
-  // Remove only this user's scores
-  const filteredScores = scores.filter(s => s.name !== currentUser);
-
-  localStorage.setItem(KEY, JSON.stringify(filteredScores));
+  e.preventDefault?.();
+  localStorage.removeItem(KEY);
   render();
 });
 
 // Initial render
 render();
+
