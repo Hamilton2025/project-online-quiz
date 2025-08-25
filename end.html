@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Fascinate&family=Fascinate+Inline&family=Fredericka+the+Great&family=Kirang+Haerang&family=Ribeye+Marrow&family=Rye&display=swap" rel="stylesheet">
     <title>Congrats!</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
-     <div id="end" class="flex-center flex-column">
-        <h1 id="finalScore"></h1>
-        <form>
-            <input type="text" name="username" id="username" placeholder="username"
-            />
-            <button type="submit" class="btn" id="saveScoreBtn" onclick="saveHighScore(event)" disabled.
-            >
-            Save
-            </button>
-        </form>
-        <a class="btn" href="quiz.html">Play Again</a><br>
-        <a class="btn" href="index.html">Go Home</a>
-     </div>
+        <div id="end" class="flex-center flex-column">
+            <h1>Final score: <span id="finalScore">0</span></h1>
+            <form>
+                <input type="text" name="username" id="username" placeholder="username" />
+                <button type="button" class="btn" id="saveScoreBtn" onclick="saveHighScore(event)" disabled>
+                    Save
+                </button>
+            </form>
+            <a class="btn" href="quiz.html">Play Again</a>
+            <br>
+            <a class="btn" href="index.html">Go Home</a>
+        </div>
     </div>
     <script src="end.js"></script>
- </body>
+</body>
+
 </html>

@@ -1,3 +1,6 @@
+/* jshint esversion: 11 */
+/* exported saveHighScore */
+
 const username = document.getElementById("username");
 const saveScoreBtn = document.getElementById("saveScoreBtn");
 const finalScore = document.getElementById("finalScore");
@@ -28,5 +31,5 @@ const saveHighScore = e => {
 
     localStorage.setItem("highScore", JSON.stringify(highScore));
 
-    window.location.assign("index.html"); // Redirect to your home page
+    window.location.assign("index.html");
 };
