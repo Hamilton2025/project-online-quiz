@@ -165,6 +165,19 @@ input[type="text"] {
   padding: 1rem;
 }
 
+.popup-content ul {
+  list-style: disc inside; 
+  padding: 0;
+  margin: 1rem 0;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.popup-content li {
+  margin-bottom: 0.5rem;
+}
+
 /*Responsive Screen*/
 @media (max-width: 768px) {
   .glass-card {
@@ -174,6 +187,11 @@ input[type="text"] {
   .popup-content {
     width: 90%;
     padding: 1.5rem;
+  }
+
+  .popup-content ul {
+    font-size: 0.9rem;
+    text-align: left;
   }
 }
 
@@ -186,4 +204,11 @@ input[type="text"] {
     width: 95%;
     padding: 1rem;
   }
+
+  .popup-content ul {
+    font-size: 0.9rem;
+    text-align: left;
+  }
 }
+
+ 
