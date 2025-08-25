@@ -2,10 +2,9 @@
 
 const LIST_ID = "highScoreList";
 const CLEAR_BTN_ID = "clearScoresBtn";
-const KEY = "highScores";      // use this consistently
-const LEGACY_KEY = "highScore"; // migrate from this if it exists
+const KEY = "highScores";     
+const LEGACY_KEY = "highScore"; 
 
-// Migrate legacy key once (in case old data used "highScore")
 try {
   const legacy = JSON.parse(localStorage.getItem(LEGACY_KEY));
   if (Array.isArray(legacy) && legacy.length) {
