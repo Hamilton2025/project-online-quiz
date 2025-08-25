@@ -26,6 +26,7 @@ body {
   overflow: hidden;
 }
 
+
 @keyframes gradient {
   0% {background-position: 0% 50%;}
   50% {background-position: 100% 50%;}
@@ -159,8 +160,30 @@ input[type="text"] {
 }
 
 .popup-content {
+  width: 90%;
   max-width: 500px;
-  padding: 2rem;
-  border-radius: 1rem;
-  text-align: left;
+  padding: 1rem;
+}
+
+/*Responsive Screen*/
+@media (max-width: 768px) {
+  .glass-card {
+    padding: 1.5rem 1.8rem;
+  }
+
+  .popup-content {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .glass-card {
+    padding: 1rem 1.2rem;
+  }
+
+  .popup-content {
+    width: 95%;
+    padding: 1rem;
+  }
 }
