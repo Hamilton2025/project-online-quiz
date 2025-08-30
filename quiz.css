@@ -208,6 +208,10 @@ html, body {
   color: var(--muted);
 }
 
+#loader.hidden, #congrats.hidden {
+  display: none !important;
+}
+
 /* Spinner */
 .spinner {
   color: var(--accent);
