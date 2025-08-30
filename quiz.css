@@ -16,11 +16,18 @@
   --shadow-lg: 0 15px 40px rgba(0,0,0,0.35);
 }
 
+html, body {
+  min-height: 100%;
+  height: auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* ---------- Quiz card ---------- */
 #game {
   width: 100%;
   max-width: 920px;
-  margin: 4vh auto;
+  margin:  1rem auto;
   padding: clamp(1rem, 4vw, 2rem);
   background: var(--surface-strong);
   color: var(--text);
